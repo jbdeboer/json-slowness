@@ -1,0 +1,7 @@
+name: json-benchmark
+version: 0.10.0
+description: Demo for JSON bencharmk
+dependencies:
+  benchmark_harness: '>=1.0.0'
+  streamy: '>=0.0.7'
+  browser: 'any'
