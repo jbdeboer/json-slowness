@@ -3,6 +3,7 @@ import 'package:benchmark_harness/benchmark_harness.dart';
 import 'package:streamy/streamy.dart';
 
 import 'dart:js' as js;
+import 'dart:convert' as convert;
 
 String json;
 
@@ -19,13 +20,18 @@ class TemplateBenchmark extends BenchmarkBase {
 
   
   // The benchmark code.
-  void xrun() {
+  void yrun() {
     totalLen += js.context['JSON']['parse'].apply([json])["list"].length;
     count++;
   }
 
    void run() {
     totalLen += jsonParse(json)["list"].length;
+    count++;
+  }
+
+  void zrun() {
+    totalLen += convert.JSON.decode(json)["list"].length;
     count++;
   }
 
